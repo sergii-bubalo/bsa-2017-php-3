@@ -13,7 +13,20 @@ class UsersPresenter
 
     public function getOrderedByLastName(): array
     {
-        // TODO: implement with ascending sort
-        return [];
+    	$result = $this->repository->getAll();
+
+    	usort($result, [$this, 'compareByLastName']);
+
+		// or
+		// usort($result, function ($current, $next) {
+		//     return $current['last_name'] <=> $next['last_name'];
+		// });
+
+	    return $result;
+    }
+
+    private static function compareByLastName($current, $next)
+    {
+		return $current['last_name'] <=> $next['last_name'];
     }
 }
