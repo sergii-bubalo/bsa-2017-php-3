@@ -17,16 +17,16 @@ class UsersPresenter
 
     	usort($result, [$this, 'compareByLastName']);
 
-		// or
-		// usort($result, function ($current, $next) {
-		//     return $current['last_name'] <=> $next['last_name'];
-		// });
+	// or
+	// usort($result, function ($current, $next) {
+	//     return $current['last_name'] <=> $next['last_name'];
+	// });
 
-	    return $result;
+        return $result;
     }
 
     private static function compareByLastName($current, $next)
     {
-		return $current['last_name'] <=> $next['last_name'];
+	return $current['last_name'] <=> $next['last_name'];
     }
 }
