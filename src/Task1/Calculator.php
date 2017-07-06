@@ -41,16 +41,15 @@ class Calculator
         $result = $args[0];
 
         for ($i = 1; $i <= count($args) - 1; $i++) {
-	        if ($args[$i] != 0) {
-	            $result /= $args[$i];
-	        } else {
-	            throw new \DivisionByZeroError();
-	        }
+	    if ($args[$i] != 0) {
+	        $result /= $args[$i];
+	    } else {
+	        throw new \DivisionByZeroError();
+	    }
         }
 
-		return intval($result);
-	}
-
+        return intval($result);
+    }
 
     public static function pow2(int $n): int
     {
