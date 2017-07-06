@@ -15,42 +15,42 @@ class Calculator
     	$result = $args[0];
 
     	for ($i = 1; $i <= count($args) - 1; $i++) {
-    		$result -= $args[$i];
-	    }
+    	    $result -= $args[$i];
+	}
 
-	    return $result;
+	return $result;
     }
 
-	public static function multiply(int ...$x): int
-	{
-		$args = func_get_args();
-		$result = $args[0];
+    public static function multiply(int ...$x): int
+    {
+        $args = func_get_args();
+        $result = $args[0];
 
-		for ($i = 1; $i <= count($args) - 1; $i++) {
-			$result *= $args[$i];
-		}
+        for ($i = 1; $i <= count($args) - 1; $i++) {
+	    $result *= $args[$i];
+        }
 
-		return $result;
-	}
+        return $result;
+    }
 
-	public static function divide(int ...$x): int
-	{
-		$args = func_get_args();
-		$result = $args[0];
+    public static function divide(int ...$x): int
+    {
+        $args = func_get_args();
+        $result = $args[0];
 
-		for ($i = 1; $i <= count($args) - 1; $i++) {
-			if ($args[$i] != 0) {
-				$result /= $args[$i];
-			} else {
-				throw new \DivisionByZeroError();
-			}
-		}
+        for ($i = 1; $i <= count($args) - 1; $i++) {
+	    if ($args[$i] != 0) {
+	        $result /= $args[$i];
+	    } else {
+	        throw new \DivisionByZeroError();
+	    }
+        }
 
-		return $result;
-	}
+        return $result;
+    }
 
-	public static function pow2(int $n): int
-	{
-		return 2**$n; 
-	}
+    public static function pow2(int $n): int
+    {
+        return 2**$n; 
+    }
 }
