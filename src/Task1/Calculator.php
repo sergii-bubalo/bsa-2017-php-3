@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace BinaryStudioAcademy\Task1;
 
 class Calculator
@@ -46,7 +48,7 @@ class Calculator
 			}
 		}
 
-		return $result;
+		return intval($result);
 	}
 
 	public static function pow2(int $n): int
