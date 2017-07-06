@@ -45,17 +45,19 @@ class PresenterTest extends TestCase
 
     private function createRepository(array $users): Repository
     {
-	    return new class($users) implements Repository
+    	return new class($users) implements Repository
+        {
+	    private $usersList;
+
+	    public function __construct(array $usersList)
 	    {
-	    	private $usersList;
+		$this->usersList = $usersList;
+	    }
 
-        	public function __construct(array $usersList) {
-				$this->usersList = $usersList;
-	        }
-
-	        public function getAll(): array {
-		        return $this->usersList;
-	        }
-        };
+	    public function getAll(): array
+	    {
+		return $this->usersList;
+            }
+	};
     }
 }
